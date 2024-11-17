@@ -1,0 +1,18 @@
+0:00 Hello everyone Let's begin our discussion by looking at what is attention mechanism Now attention mechanism is important to understand to understand any transformer architecture now because this is LLM Specialization so we will begin with this topic, but before I begin with this topic.
+0:19 I am excited Expecting that you already know about LSTMs Okay, and I am expecting that you know about the encoder decoder architecture Okay, and you already know about the the problem of Machine translation or maybe question answering or any other kind of a many-to-many task, right?
+0:41 In the last specialization or in the last kind of a course about NLP. We did look into the theory behind LSTM and the encoder decoder architecture and how all of that work and We also looked into the development of LSTM from scratch as well.
+0:57 Okay, so all of that is required for you to understand the attention mechanism because the motivation for that comes from that Translation problem that we will discuss today.
+1:09 Okay And from there on I will explain what attention mechanism is why it was developed and that attention Mechanism will become the basis for the transformer architecture because the paper which discusses the transformer architecture is called attention is all you need.
+1:30 Okay Now this is the paper published in 2017 and this is the actual paper which kind of implemented the transformer architecture and introduced the transformer architecture.
+1:45 Okay All of the large language models that you're seeing today is based on this transformer architecture. Okay So to understand the transformer architecture We need to understand the attention mechanism and why it was developed in the first place, right?
+1:58 And to understand that you need to understand the problem of a translation or a many-to-many task and encoder-decoder architecture and LSTM, okay?
+2:07 So again, this is my assumption that you already know about that. If not, then I would encourage you to go to the NLP course and go back and try to understand the LSTM and also look at the development of LSTM, the encoder-decoder architecture.
+2:21 from scratch, okay? The theory as well as the code, that would really help you, okay? Because I will be explaining the theory and after that I will get into the implementation of that as how to develop it from scratch, okay?
+2:35 So, given that you have an understanding, let me just very quickly kind of give you an overview of what encoder-decoder architecture is, right?
+2:43 So, again, in many-to-many tasks, you have some kind of input sentence and you have some kind of an output sentence.
+2:50 Those input-output sentences could be question answers, those can be translations, it could be anything. Let's say it's a question-answer, right?
+2:58 So, the question is gonna be, let's say, how are you? And the answer is gonna be, I am doing fine or something like that, right?
+3:09 So, this is the answer, right? And this is the question part. Usually, you will have some kind of a, you know, encoder architecture where you have input going in and then there is some hidden state going in.
+3:24 And the output, hidden state of the last word will contain all of the information of the encoder, right? And that output, right, will be given as an input to the decoder over here, right?
+3:41 And that output, output which contains all of the information of the encoder. This is what we call, uh, you can call it a thought vector, right?
+3:50 You can call it a context vector, whatever you may call it, right? It's a single vector which is the, which is the uh uh output hidden dimension of the last word, right?
